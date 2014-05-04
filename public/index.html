@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tumhe apne bhai ke khoon ka badla lena hoga</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style type="text/css">
+	circle {
+  fill: none;
+  fill-opacity: .2;
+  stroke: black;
+  stroke-width: 1.5px;
+}
+#bollywood{
+	width: 750px;
+	margin: 50px auto; 
+}
+</style>
+</head>
+<body>
+<div id="bollywood">
+
+</div>
+<script src="js/d3.v3.min.js"></script>
+<script type="text/javascript">
+var svg = d3.select("#bollywood").append("svg")
+    .attr("width", 720)
+    .attr("height", 240)
+  .append("g")
+    .attr("transform", "translate(0,128)");
+
+var data = svg.append("g").attr("transform", "translate(300)");
+data.append("circle").style("fill", "#3182bd");
+data.append("text").attr("y", -120).text("Zehar hai kya?").style("font-weight", "bold");
+data.append("text").attr("x", -50).text("Zehar");
+
+svg.append("text").attr("x", 360).text("Tera Chumma");
+
+var elements = svg.append("g").attr("transform", "translate(420)");
+elements.append("circle").style("fill", "#e6550d");
+elements.append("text").attr("y", -120).text("Pyaar hai?").style("font-weight", "bold");
+elements.append("text").attr("x", 50).text("Pyaar");
+
+svg.selectAll("circle")
+    .attr("r", 110);
+
+svg.selectAll("text")
+    .attr("dy", ".35em")
+    .attr("text-anchor", "middle");
+
+</script>
+</body>
+</html>
